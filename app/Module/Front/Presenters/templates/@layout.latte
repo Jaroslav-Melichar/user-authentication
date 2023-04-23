@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  <link href="{$basePath}/css/style.css" rel="stylesheet">
+
+    <title>Home</title>
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</head>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0  text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <title>Blog Novinky ve Světě Motorů</title>
+        <div class="midheader">
+          <h1>Blog Novinky ve Světě Motorů</h1>
+        </div>
+        <div class="ulli">
+        <div class="horni-menu">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        
+	        <li><a n:href="Homepage:">Články&nbsp&nbsp</a></li>
+	          {if $user->isLoggedIn()}
+	      	<li><a n:href="Sign:out">Odhlásit&nbsp&nbsp</a></li>
+	          {else}
+	       	<li><a n:href="Sign:in">Přihlásit&nbsp&nbsp</a></li>
+          	{/if}
+          <li>{if $user->isLoggedIn()}<a n:href="Edit:create">Vytvořit příspěvek</a>{/if}</li>
+        </div>
+          </ul>
+            </div>
+          </div>
+      </div>
+  </header>
+  {include content}
+<style>
+body {
+    background-color: darkgrey;
+
+}
+ul,a{
+  text-align: center;
+  text-decoration:none;
+  color: white;
+}
+a:hover{
+  color: grey;
+}
+h1{
+  text-align: center;
+  color: white;
+}
+.container-md {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 15px;
+  text-align: center;
+  }
+.all-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.post {
+  background-color: white;
+  border-radius: 3%;
+  box-shadow: 10px 10px 10px rgba(1, 1, 0, 0.1);
+  padding: 20px;
+  max-height: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.post .date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.post h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.post img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: grey;
+  max-width: 100%;
+  max-height: 12%;
+}
+.post .btn {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  border-radius: 0px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .all-posts {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+</style>

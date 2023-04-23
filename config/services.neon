@@ -1,4 +1,5 @@
 services:
+	- App\Model\PostFacade
 	- App\Model\UserFacade
 	- App\Forms\FormFactory
 	- App\Forms\SignInFormFactory

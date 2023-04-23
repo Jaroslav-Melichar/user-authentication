@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-if (@!include __DIR__ . '/../vendor/autoload.php') {
-	die('Install Nette using `composer update`');
-}
+require __DIR__ . '/../vendor/autoload.php';
 
 $configurator = App\Bootstrap::boot();
 $container = $configurator->createContainer();
